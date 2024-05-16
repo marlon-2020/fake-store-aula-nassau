@@ -1,0 +1,10 @@
+<section class="container-vazio" *ngIf="!produtos">
+  <h2>Não há produtos para exibir</h2>
+</section>
+<section class="container"  *ngIf="produtos">
+  <div class="produto" *ngFor = "let produto of produtos">
+    <img src="{{ produto.image }}" alt="">
+    <h1 fonte>{{ produto.title | muitaletra }}</h1>
+    <p fonte>{{ produto.price | currency: 'BRL' }}</p>
+  </div>
+</section>
